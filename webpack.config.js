@@ -14,6 +14,11 @@ const config = {
     },
     module: {
         rules: [
+           
+            {
+                test: require.resolve('d3'),
+                loader: 'd3-webpack-loader',
+            },
             {
                 test: /\.js$/, // applies to js files
                 use: ['babel-loader'], // transpiles your js
