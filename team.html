@@ -2,10 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/main.css">
-    <script src="./dist/main.js" defer></script>
-    <script src="node_modules/d3/dist/d3.js" defer></script>
-    <title>European football</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles/team.css">
+    <script src="src/scripts/team.js" defer></script>
 </head>
 
 <header>
@@ -29,23 +28,9 @@
 </header>
 <body>
 
-    <div id="map-container"></div>
-
-    <h2 id="message">
-        <p>Select the country for your next trip.</p>
-    </h2>
-
-    <div id="dates-form" style="display: none;">
-     <form id="trip-form">
-         <label for="start-date">Start Date:</label>
-         <input type="date" id="start-date" name="start-date" required>
-         <br>
-         <label for="end-date">End Date:</label>
-            <input type="date" id="end-date" name="end-date" required>
-         <br>
-         <input type="submit" value="Submit">
-     </form>
-    </div>
-    <ul id="games-list"></ul>
+    
+    <div id="team-info"></div>
+    <a href="index.html"><button>Go back to plan your trip</button></a>
+    
 </body>
 </html>
