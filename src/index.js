@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => response.json())
         .then((europeJSON) => {
             const mapContainer = document.getElementById('map-container');
+            // Add a tooltip element to the map container
+            const tooltip = document.createElement("div");
+            tooltip.className = "tooltip";
+            mapContainer.appendChild(tooltip);
 
             // Create an SVG element for the map
             svg = d3.select(mapContainer).append('svg');
@@ -77,27 +81,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Set the cursor to "pointer" for the highlighted countries
                     return highlightedCountries.includes(feature.properties.name) ? 'pointer' : 'default';
                 })
-                // .on('mouseover', function (event, feature) {
-                //     // Change the fill color on hover
-                //     if (highlightedCountries.includes(feature.properties.name)) {
-                //         d3.select(this).attr('fill', 'lightblue'); // Apply lightblue color on hover for highlighted countries
-                //     }
-                // })
-                // .on('mouseout', function () {
-                //     // Restore the default fill color when not hovered
-                //     d3.select(this).attr('fill', (feature) => {
-                //         if (highlightedCountries.includes(feature.properties.name)) {
-                //             return 'lightgreen'; // Apply lightblue color for highlighted countries
-                //         } else {
-                //             return 'gray'; // Apply gray color for other countries
-                //         }
-                //     });
-                // })
+
+                //creating a tooltip with the name of the country
+                .on('mouseover', (event, feature) => {
+                    // Check if the hovered country is in the highlighted countries list
+                    if (highlightedCountries.includes(feature.properties.name)) {
+                        // Position and display the tooltip
+                        tooltip.style.display = 'block';
+                        tooltip.style.left = `${event.pageX + 10}px`;
+                        tooltip.style.top = `${event.pageY - 25}px`; // Adjust the top position as needed
+                        tooltip.textContent = feature.properties.name;
+                    }
+                })
+
+                //erasing the tooltip when hovering off the country
+                .on('mouseout', () => {
+                    tooltip.style.display = 'none';
+                })
                 .on('click', function (event, feature) {
                     // Check if the clicked country is in the highlightedCountries array
                     if (highlightedCountries.includes(feature.properties.name)) {
                         // Zoom in on click for the highlighted countries
-                        if(selectedCountry) resetMapColors();
+                        if(selectedCountry){
+                             resetMapColors();
+                            document.getElementById('games-list').innerHTML = '';//clear the list of games
+                        }
                         const [[x0, y0], [x1, y1]] = path.bounds(feature); // Get the bounding box of the clicked country
                         const [cx, cy] = [(x0 + x1) / 2, (y0 + y1) / 2]; // Calculate the centroid of the bounding box
                         const scale = 3; // Set the desired scale factor for zooming in
@@ -131,37 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             datesForm.style.display = 'none';
                         }
                     }
-                    // Add the select another country button to the page
-                    selectDifferentBtn = document.createElement('button'); // Initialize the button here
-                    selectDifferentBtn.textContent = 'Select a different country';
-                    selectDifferentBtn.addEventListener('click', () => {
-                        // Reset the map to its initial position
-                        svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
-
-                        // Reset selectedCountry and countrySelected to null
-                       
-                        mapCountry.attr('fill', 'lightgreen');
-                        mapCountry = null;
-                        selectedCountry = null;
-                        countrySelected = false;
-
-                        
-
-                        // Reset the message and dates form
-                        const message = document.getElementById('message');
-                        const datesForm = document.getElementById('dates-form');
-                        message.innerHTML = '<p>Select the country for your next trip.</p>';
-                        datesForm.style.display = 'none';
-                        // Remove the 'Select a different country' button
-                        selectDifferentBtn.remove();
-                    });
-                    //console.log(countrySelected)
-                    if (countrySelected) document.getElementById('map-container').appendChild(selectDifferentBtn);
-                    
           
             });
-            //console.log(selectedCountry)
-            
             
         })
         .catch((error) => {
@@ -175,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const teamFiles = {
             'Spain': ['atletico.json', 'barcelona.json', 'madrid.json'],
             'England': ['arsenal.json', 'chelsea.json', 'liverpool.json', 'mancity.json', 'manutd.json'],
-            'France': ['paris.json', 'oliympique.json'],
+            'France': ['paris.json', 'olympique.json'],
             'Italy': ['inter.json', 'juventus.json', 'milan.json'],
             'Germany': ['bayern.json', 'borussia.json']
         };

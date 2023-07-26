@@ -17,8 +17,13 @@ function displayTeamInfo() {
         return;
     }
 
-    fetch(`https://manuproxyserver.onrender.com/?url=https://api-football-v1.p.rapidapi.com/v3/teams?id=${teamId}`, {
+    // football-api url
+    fetch(`https://manuproxyserver.onrender.com/?url=https://v3.football.api-sports.io/teams?id=${teamId}`, {
+    
+    // rapid api url
+    //fetch(`https://manuproxyserver.onrender.com/?url=https://api-football-beta.p.rapidapi.com/v3/teams?id=${teamId}`, {
         method: "GET"
+        
         // headers: {
         //     "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
         //     "x-rapidapi-key": apiKey,

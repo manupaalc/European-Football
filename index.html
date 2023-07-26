@@ -17,6 +17,7 @@
         <li><img src="assets/icons/manuntd.png" alt="manuntd"></li>
         <li><img src="assets/icons/mancity.png" alt="mancity"></li>
         <li><img src="assets/icons/borussia.png" alt="borussia"></li>
+        <li><img src="assets/icons/bayern.png" alt="bayern"></li>
         <li><img src="assets/icons/paris.png" alt="paris"></li>
         <li><img src="assets/icons/olympique.png" alt="olympique"></li>
         <li><img src="assets/icons/inter.png" alt="inter"></li>
@@ -31,21 +32,24 @@
 
     <div id="map-container"></div>
 
-    <h2 id="message">
-        <p>Select the country for your next trip.</p>
-    </h2>
 
-    <div id="dates-form" style="display: none;">
-     <form id="trip-form">
-         <label for="start-date">Start Date:</label>
-         <input type="date" id="start-date" name="start-date" required>
-         <br>
-         <label for="end-date">End Date:</label>
-            <input type="date" id="end-date" name="end-date" required>
-         <br>
-         <input type="submit" value="Submit">
-     </form>
+    <div id="message-form-container">
+        <h2 id="message">
+            <p>Select the country for your next trip.</p>
+        </h2>
+
+        <div id="dates-form" style="display: none;">
+         <form id="trip-form">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="start-date" required>
+            <br>
+            <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+        <ul id="games-list"></ul>
     </div>
-    <ul id="games-list"></ul>
 </body>
 </html>

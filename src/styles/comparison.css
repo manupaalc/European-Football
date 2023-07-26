@@ -1,0 +1,34 @@
+.team-icons {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team-icons li {
+    flex: 0 0 40px;
+    height: 40px;
+    /* Set a fixed width for each icon container */
+    margin: 10px;
+}
+
+.team-icons img {
+    max-height: 100%;
+    /* Make sure the images don't exceed their container's width */
+    width: auto;
+    /* Preserve the aspect ratio of the images */
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 70;
+}
+
+.team-icons img {
+    cursor: pointer;
+}
+header {
+    height: 100vh;
+    /* Add any other styling you want for the header */
+}

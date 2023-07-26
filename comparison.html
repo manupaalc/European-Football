@@ -6,12 +6,125 @@
     <script src="src/scripts/comparison.js" defer></script>
     <title>Document</title>
 </head>
+<header>
+    <h1>European Football</h1>
+    <ul class="team-icons">
+        <li><img src="assets/icons/arsenal.png" alt="arsenal"></li>
+        <li><img src="assets/icons/chelsea.png" alt="chelsea"></li>
+        <li><img src="assets/icons/liverpool.png" alt="liverpool"></li>
+        <li><img src="assets/icons/manuntd.png" alt="manuntd"></li>
+        <li><img src="assets/icons/mancity.png" alt="mancity"></li>
+        <li><img src="assets/icons/borussia.png" alt="borussia"></li>
+        <li><img src="assets/icons/bayern.png" alt="bayern"></li>
+        <li><img src="assets/icons/paris.png" alt="paris"></li>
+        <li><img src="assets/icons/olympique.png" alt="olympique"></li>
+        <li><img src="assets/icons/inter.png" alt="inter"></li>
+        <li><img src="assets/icons/milan.png" alt="milan"></li>
+        <li><img src="assets/icons/juventus.png" alt="juventus"></li>
+        <li><img src="assets/icons/barcelona.png" alt="barcelona"></li>
+        <li><img src="assets/icons/madrid.png" alt="madrid"></li>
+        <li><img src="assets/icons/atletico.png" alt="atletico"></li>
+    </ul>
+</header>
 <body>
     <main>
-        <section id="team-comparison">
-            <!-- The comparison data will be dynamically added here -->
-        </section>
+       
     </main>
+    <table id="comparison-table">
+        <tr>
+            <td class="first-row">Team</td>
+            <td id="team1Id"></td>
+            <td id="team2Id"></td>
+            
+        </tr>
+        <tr>
+            <td class="first-row">League</td>
+            <td id="team1League"></td>
+            <td id="team2League"></td>
+           
+        </tr>
+        <tr>
+            <td class="first-row"></td>
+            <td>Home</td>
+            <td>Away</td>
+            <td>All</td>
+            <td>Home</td>
+            <td>Away</td>
+            <td>All</td>
+            
+        <tr>
+            <td class="first-row">Games Played</td>
+            <td id="team1GamesHome"></td>
+            <td id="team1GamesAway"></td>
+            <td id="team1GamesAll"></td>
+            <td id="team2GamesHome"></td>
+            <td id="team2GamesAway"></td>
+            <td id="team2GamesAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Wins</td>
+            <td id="team1WinsHome"></td>
+            <td id="team1WinsAway"></td>
+            <td id="team1WinsAll"></td>
+            <td id="team2WinsHome"></td>
+            <td id="team2WinsAway"></td>
+            <td id="team2WinsAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Draws</td>
+            <td id="team1DrawsHome"></td>
+            <td id="team1DrawsAway"></td>
+            <td id="team1DrawsAll"></td>
+            <td id="team2DrawsHome"></td>
+            <td id="team2DrawsAway"></td>
+            <td id="team2DrawsAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Loss</td>
+            <td id="team1LossHome"></td>
+            <td id="team1LossAway"></td>
+            <td id="team1LossAll"></td>
+            <td id="team2LossHome"></td>
+            <td id="team2LossAway"></td>
+            <td id="team2LossAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Goals for</td>
+            <td id="team1GoalsForHome"></td>
+            <td id="team1GoalsForAway"></td>
+            <td id="team1GoalsForAll"></td>
+            <td id="team2GoalsForHome"></td>
+            <td id="team2GoalsForAway"></td>
+            <td id="team2GoalsForAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Goals Against</td>
+            <td id="team1GaolsAgainstHome"></td>
+            <td id="team1GaolsAgainstAway"></td>
+            <td id="team1GaolsAgainstAll"></td>
+            <td id="team2GaolsAgainstHome"></td>
+            <td id="team2GaolsAgainstAway"></td>
+            <td id="team2GaolsAgainstAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Average Goals For</td>
+            <td id="team1AverafeGoalsForHome"></td>
+            <td id="team1AverafeGoalsForAway"></td>
+            <td id="team1AverafeGoalsForAll"></td>
+            <td id="team2AverafeGoalsForHome"></td>
+            <td id="team2AverafeGoalsForAway"></td>
+            <td id="team2AverafeGoalsForAll"></td>
+        </tr>
+        <tr>
+            <td class="first-row">Average Goals Against</td>
+            <td id="team1AverafeGoalsAgainstHome"></td>
+            <td id="team1AverafeGoalsAgainstAway"></td>
+            <td id="team1AverafeGoalsAgainstAll"></td>
+            <td id="team2AverafeGoalsAgainstHome"></td>
+            <td id="team2AverafeGoalsAgainstAway"></td>
+            <td id="team2AverafeGoalsAgainstAll"></td>
+        </tr>
+    </table>
     <a href="index.html" class="back-btn">Go Back to plan your trip</a>
 </body>
 </html>

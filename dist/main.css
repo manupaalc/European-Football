@@ -27,3 +27,39 @@ h1 {
   text-align: center;
   font-size: 70;
 }
+
+.team-icons img {
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  pointer-events: none;
+  /* This ensures that the tooltip doesn't interfere with mouse events */
+  display: none;
+  /* Initially hide the tooltip */
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#map-container {
+  /* Set the width of the map container */
+  width: 60%;
+}
+
+#message-form-container {
+  /* Set the width of the container for the message, form, and list of games */
+  width: 40%;
+}
+
+header {
+  width: 100%;
+}
