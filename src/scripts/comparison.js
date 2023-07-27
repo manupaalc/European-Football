@@ -137,10 +137,14 @@ function displayTeamStatistics(team1Stats, team2Stats) {
     }
 
     // Team names row
-    createRow("Team", team1Stats.team.name, team1Stats.team.name, "", team2Stats.team.name, team2Stats.team.name, "");
+    createRow("Team", `<img class="logo" src="${team1Stats.team.logo}" alt="Team Logo">`, team1Stats.team.name, "", `<img class="logo" src="${team2Stats.team.logo}" alt="Team Logo">`, team2Stats.team.name, "");
 
     // League row
-    createRow("League", team1Stats.league.name, team1Stats.league.name, "", team2Stats.league.name, team2Stats.league.name, "");
+    createRow("League", `<img class="logo" src="${team1Stats.league.logo}" alt="League Logo">`, team1Stats.league.name, "", `<img class="logo" src="${team2Stats.league.logo}" alt="League Logo">`, team2Stats.league.name, "");
+
+    // create home away total row
+
+    createRow("", "Home", "Away", "Total", "Home", "Away", "Total")
 
     // Games Played row
     createRow("Games Played", team1Stats.fixtures.played.home, team1Stats.fixtures.played.away, team1Stats.fixtures.played.total, team2Stats.fixtures.played.home, team2Stats.fixtures.played.away, team2Stats.fixtures.played.total);

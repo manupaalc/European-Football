@@ -29,6 +29,104 @@ h1 {
     cursor: pointer;
 }
 header {
-    height: 100vh;
-    /* Add any other styling you want for the header */
+    height: 25%;
+    background-color: rgb(58, 57, 57);
 }
+
+body {
+    background-image: url('../../assets/backgrounds/goal_bg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+
+.social-icons {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+}
+
+
+.social-icons a {
+
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+
+.social-icons img {
+    height: 80px;
+    /* Set the width to auto to maintain aspect ratio */
+    width: auto;
+}
+
+/* Add styles for the comparison table */
+#comparison-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#comparison-table th,
+#comparison-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    /* Gray border for cells */
+    background-color: #f9f9f9;
+    /* Light gray background */
+}
+
+/* Style the first row (table header) */
+#comparison-table th {
+    background-color: #333;
+    /* Dark gray background for table header */
+    color: #fff;
+    /* White text color for table header */
+    font-weight: bold;
+}
+
+/* Add styles for the first column (row labels) */
+#comparison-table td.first-row {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    /* Light gray background for row labels */
+    width: 200px;
+    /* Set the width for the first column */
+}
+
+/* Style the team and league names */
+#comparison-table td img {
+    height: 30px;
+    /* Set the height for team and league logos */
+    width: auto;
+    /* Maintain the aspect ratio of the logos */
+    margin-right: 5px;
+    /* Add some spacing between the logo and the name */
+}
+
+#comparison-table td.team-name,
+#comparison-table td.league-name {
+    font-size: 16px;
+    /* Increase font size for team and league names */
+    font-weight: bold;
+}
+
+/* Style the rest of the cells */
+#comparison-table td:not(.first-row) {
+    width: 100px;
+    /* Set the width for the other columns */
+}
+
+/* Style the even rows with a darker gray background */
+#comparison-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Darker gray background for even rows */
+}
+

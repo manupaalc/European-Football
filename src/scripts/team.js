@@ -23,11 +23,7 @@ function displayTeamInfo() {
     // rapid api url
     //fetch(`https://manuproxyserver.onrender.com/?url=https://api-football-beta.p.rapidapi.com/v3/teams?id=${teamId}`, {
         method: "GET"
-        
-        // headers: {
-        //     "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-        //     "x-rapidapi-key": apiKey,
-        // },
+       
     })
         .then((response) => response.json())
         .then((data) => {
@@ -51,10 +47,14 @@ function displayTeamInfo() {
                 <p>Founded: ${foundedYear}</p>
                 <h3>Stadium: ${venue}</h3>
                 <p>Capacity: ${stadiumCapacity}</p>
-                <img src="${stadiumImage}" alt="stadium">
                 <p>City: ${city}</p>
-                
             `;
+            const stadiumImageElement = document.createElement("img");
+            stadiumImageElement.src = stadiumImage;
+            stadiumImageElement.alt = "stadium";
+            stadiumImageElement.id = "stadium-info"; // Add an id to the stadium image
+
+            teamInfoElement.appendChild(stadiumImageElement);
         })
         .catch((err) => {
             console.log(err);
