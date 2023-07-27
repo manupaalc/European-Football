@@ -1,23 +1,35 @@
-European Football
+#European Football
 
 This website will serve as a valuable resource for travelers visiting Europe who are interested in exploring some of the region's top football teams. With its user-friendly interface, the website will provide essential information about scheduled matches, team statistics, and an overview of the overall competitive landscape.
 
-European Football offers the following features to its users:
+https://manupaalc.github.io/European-Football/
 
-Upcoming Matches: Users can easily access the schedule of matches for various football clubs across Europe, allowing them to plan their visits and witness exciting football action firsthand.
+##Technologies used:
 
-Club Information: Detailed information about each football club, such as team history, key players, stadium details, and club achievements, will be available for enthusiasts to delve into.
+1.  Frontend: HTML, CSS, and JavaScript were used to create the user interface and interactivity of the web         application.
 
-League Information: Users can explore comprehensive league data, including standings, fixtures, and recent results, giving them a broader understanding of the competitive dynamics in European football leagues.
+2.  Map Visualization: D3.was employed to draw an interactive map of Europe, displaying football team information and fixtures.
 
-Club Comparison: The website enables users to perform side-by-side comparisons of two football clubs, allowing them to analyze player statistics, team performance, and head-to-head records, leading to insightful insights.
+3.  Backend: Node.js with Express.js as the framework served as the lightweight proxy server, allowing communication with third-party APIs and avoiding CORS issues.
 
+4.  HTTP Requests: Axios, a JavaScript library, facilitated making API requests from the frontend to the backend proxy server.
 
-In addition, this project will include:
+5.  Data Format: JSON was used for data exchange between frontend and backend, as well as for storing GeoJSON data for map visualization.
 
-Interactive Maps: A visually engaging map interface will display the locations of stadiums and match venues across Europe, making it easy for users to plan their travels effectively. Users can click on map markers to view additional details about each stadium.
+6.  Version Control: Git and GitHub enabled efficient collaboration, version tracking, and code sharing among team members.
 
-Data Visualization: Utilizing cutting-edge data visualization techniques, users will gain deeper insights into team performance trends, league standings, and other statistical aspects of European football. The visualizations will be interactive, allowing users to filter and explore data dynamically.
+7.  Environment Variables: Sensitive data, such as API keys, was securely stored using environment variables on the server-side.
+
+##Challenges:
+
+1.  Interactive map visualization:
+
+    Challenge: Creating an interactive map of Europe using D3.js required handling GeoJSON data and managing event interactions efficiently.
+    Solution: By using D3.js for map rendering and proper data manipulation, the team achieved a seamless and responsive map experience. Event listeners were utilized to allow users to click on countries, view tooltips, and highlight selected countries for trip planning.
+
+2.  Backend Proxy with axios request
+    Challenge: Making API requests directly from the frontend using Axios to third-party APIs could lead to empty response when passing more than one argument.
+    Solution: Adapt the proxy logic to pass the arguments as params before the url just when there is more than one argument to pass.
 
 this would be the wireframes desired:
 
