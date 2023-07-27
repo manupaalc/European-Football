@@ -195,12 +195,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'Germany': ['bayern.json', 'borussia.json']
         };
 
+        
         const teamCalendars = [];
         try {
             if (selectedCountry in teamFiles) {
                 const countryTeams = teamFiles[selectedCountry];
                 for (const teamFile of countryTeams) {
-                    const response = await fetch(`../assets/calendars/${selectedCountry}/${teamFile}`);
+                    const response = await fetch(`assets/calendars/${selectedCountry}/${teamFile}`);
                     const teamCalendar = await response.json();
                     teamCalendars.push(teamCalendar);
                 }
