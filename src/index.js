@@ -253,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function displayGames(games) {
     const gamesList = document.getElementById('games-list');
+    const gamesListWrapper = document.getElementById('games-list-wrapper');
     gamesList.innerHTML = ''; // Clear the existing list
 
     if (games.length > 0){
@@ -267,9 +268,13 @@ function displayGames(games) {
             listItem.textContent = `${formattedDate} ${HomeTeam} vs ${AwayTeam}, stadium: ${Location}`;
             gamesList.appendChild(listItem);
         });
+        // Show the games list container
+        gamesListWrapper.style.display = 'block';
     } else {
         const noGamesMessage = `In ${selectedCountry} from ${startDate} to ${endDate}, there will not be any games, please choose different dates.`;
         document.getElementById('message').innerText = noGamesMessage;
+        // Hide the games list container
+        gamesListWrapper.style.display = 'none';
     }
 }
 

@@ -135,5 +135,71 @@ body {
 }
 
 
+#dates-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
 
+#dates-form label {
+    margin: 5px 10px;
+    font-size: 16px;
+}
 
+#dates-form input[type="date"] {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#dates-form input[type="submit"] {
+    margin-top: 10px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#dates-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the games list */
+#games-list {
+    max-width: 800px;
+    /* Adjust the max-width as needed */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#games-list h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Style for individual game items */
+#games-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Style for game details like teams, date, etc. */
+#games-list li p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+#games-list-wrapper {
+    display: none;
+}

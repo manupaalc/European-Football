@@ -86,3 +86,7 @@ body {
     max-width: 600px;
     /* Adjust the max-width as needed */
 }
+
+.team-icons img {
+    cursor: pointer;
+}
