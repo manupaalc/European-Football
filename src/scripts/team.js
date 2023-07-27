@@ -27,7 +27,7 @@ function displayTeamInfo() {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data)
+            
             const teamInfo = data.response[0]; // Access the 'team' object inside the response
 
             const teamName = teamInfo.team.name;

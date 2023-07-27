@@ -4,7 +4,7 @@ async function fetchTeamStatistics(teamId, leagueId) {
    
     const season = "2022";
 
-    console.log(teamId, season, leagueId)  
+    
     
     //url for football-api
     //const url = `https://manuproxyserver.onrender.com/?url=https://v3.football.api-sports.io/teams/statistics?season=${season}&team=${teamId}&league=${leagueId}`
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Fetch the statistics for both teams
     const team1Stats = await fetchTeamStatistics(teamId1, leagueId1);
     const team2Stats = await fetchTeamStatistics(teamId2, leagueId2);
-    console.log(team1Stats);
+    
 
     if (team1Stats.length < 1 || team2Stats < 1) {
         // If the data could not be fetched, display an error message
