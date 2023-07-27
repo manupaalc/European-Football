@@ -316,3 +316,4 @@ const leagueIds = {
     italy: 135,
     france: 61
 }
+console.log('updated')
