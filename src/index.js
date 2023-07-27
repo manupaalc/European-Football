@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     // Fetch the GeoJSON data using the Fetch API
-    fetch('../assets/europe_features.json')
+    fetch('assets/europe_features.json')
         .then((response) => response.json())
         .then((europeJSON) => {
             const mapContainer = document.getElementById('map-container');

@@ -14,7 +14,7 @@ header{
     
 }
 
-/* Update h1 styles */
+
 h1 {
     font-size: 64px;
     color: #fff;
@@ -22,17 +22,17 @@ h1 {
 
     
    
-    /* Allow title to take available space */
+   
 }
 
-/* Update social-icons styles */
+
 .social-icons {
     
     display: flex;
     justify-content: flex-end;
 }
 
-/* Update social-icons a styles */
+
 .social-icons a {
     
     margin-left: 10px;
@@ -130,7 +130,7 @@ body {
 }
 
 body {
-    background-image: url('/assets/backgrounds/goal_bg.jpeg');
+    background-image: url('assets/backgrounds/goal_bg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
 }
