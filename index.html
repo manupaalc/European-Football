@@ -7,9 +7,18 @@
     <script src="node_modules/d3/dist/d3.js" defer></script>
     <title>European football</title>
 </head>
-
 <header>
-    <h1>European Football</h1>
+    <div class="header-container">
+        <h1>European Football</h1>
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/manuel-pérez-asensio-55839474" target="_blank">
+                <img src="assets/linked_github/linked_in_logo.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/manupaalc" target="_blank">
+                <img src="assets/linked_github/git_hib_logo_2.png" alt="GitHub">
+            </a>
+        </div>
+    </div>
     <ul class="team-icons">
         <li><img src="assets/icons/arsenal.png" alt="arsenal"></li>
         <li><img src="assets/icons/chelsea.png" alt="chelsea"></li>
@@ -28,8 +37,9 @@
         <li><img src="assets/icons/atletico.png" alt="atletico"></li>
     </ul>
 </header>
-<body>
 
+<body>
+   
     <div id="map-container"></div>
 
 
@@ -50,6 +60,14 @@
         </form>
         </div>
         <ul id="games-list"></ul>
+    </div>
+
+    <div id="welcome-message" class="welcome-message">
+        <p>
+            Welcome to European Football. Planning on traveling to the old continent? Let us know the country and dates of
+            your trip and we will show you the most exciting games going on during your trip.
+        </p>
+        <button id="close-message-btn">Go ahead!</button>
     </div>
 </body>
 </html>

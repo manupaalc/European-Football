@@ -6,7 +6,43 @@ let selectDifferentBtn;
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  
+
+    // Add the welcome message container and button dynamically
+    const welcomeMessageContainer = document.createElement('div');
+    welcomeMessageContainer.id = 'welcome-message';
+    welcomeMessageContainer.classList.add('welcome-message');
+    welcomeMessageContainer.innerHTML = `
+    <p>
+      Welcome to European Football. Planning on traveling to the old continent? Let us know the country and dates of your trip and we will show you the most exciting games going on during your trip.
+    </p>
+    <button id="close-message-btn">Go ahead!</button>
+  `;
+    document.body.appendChild(welcomeMessageContainer);
+
+    // Check if the welcome message has been shown before
+    const isWelcomeMessageShown = localStorage.getItem('welcomeMessageShown');
+
+    // Get the welcome message container
+    const welcomeMessage = document.getElementById('welcome-message');
+
+    // Get the close button
+    const closeButton = document.getElementById('close-message-btn');
+
+    // Show the welcome message if it's the first visit
+    if (!isWelcomeMessageShown) {
+        welcomeMessage.style.display = 'block';
+    }
+
+    // Add click event listener to the close button
+    closeButton.addEventListener('click', () => {
+        // Hide the welcome message
+        welcomeMessage.style.display = 'none';
+        // Mark the welcome message as shown in local storage
+        localStorage.setItem('welcomeMessageShown', true);
+    });
+    
+
+    //declare the countries that will have interaction with the user
     const highlightedCountries = ['Spain', 'Italy', 'France', 'Germany', 'United Kingdom'];
     let selectedCountry = null;
     
