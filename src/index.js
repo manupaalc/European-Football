@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     //declare the countries that will have interaction with the user
-    const highlightedCountries = ['Spain', 'Italy', 'France', 'Germany', 'United Kingdom'];
+    const highlightedCountries = ['Spain', 'Italy', 'France', 'Germany', 'United Kingdom', 'Portugal'];
     let selectedCountry = null;
     
 
@@ -192,7 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'England': ['arsenal.json', 'chelsea.json', 'liverpool.json', 'mancity.json', 'manutd.json'],
             'France': ['paris.json', 'olympique.json'],
             'Italy': ['inter.json', 'juventus.json', 'milan.json'],
-            'Germany': ['bayern.json', 'borussia.json']
+            'Germany': ['bayern.json', 'borussia.json'],
+            'Portugal': ['porto.json', 'benfica.json']
         };
 
         
@@ -320,6 +321,7 @@ const leagueIds = {
     germany: 78,
     spain: 140,
     italy: 135,
-    france: 61
+    france: 61,
+    portugal: 94
 }
 console.log('updated')

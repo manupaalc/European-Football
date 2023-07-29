@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
         barcelona: 529,
         madrid: 541,
         atletico: 530,
+        benfica: 211,
+        porto: 212
     };
 
     // Add click event listeners to team icons

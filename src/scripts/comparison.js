@@ -1,3 +1,32 @@
+const teamIds = {
+    arsenal: 42,
+    chelsea: 49,
+    liverpool: 40,
+    manuntd: 33,
+    mancity: 50,
+    borussia: 165,
+    bayern: 157,
+    paris: 85,
+    olympique: 81,
+    inter: 505,
+    milan: 489,
+    juventus: 496,
+    barcelona: 529,
+    madrid: 541,
+    atletico: 530,
+    benfica: 211,
+    porto: 212
+};
+
+const leagueIds = {
+    england: 39,
+    germany: 78,
+    spain: 140,
+    italy: 135,
+    france: 61,
+    portugal: 94
+};
+
 
 // Function to fetch team statistics
 async function fetchTeamStatistics(teamId, leagueId) {
@@ -33,30 +62,7 @@ async function fetchTeamStatistics(teamId, leagueId) {
 
 // Function to get the league ID for comparison based on the team ID
 function getLeagueIdForComparison(teamId) {
-    const teamIds = {
-        arsenal: 42,
-        chelsea: 49,
-        liverpool: 40,
-        manuntd: 33,
-        mancity: 50,
-        borussia: 165,
-        paris: 85,
-        olympique: 81,
-        inter: 505,
-        milan: 489,
-        juventus: 496,
-        barcelona: 529,
-        madrid: 541,
-        atletico: 530,
-    };
-
-    const leagueIds = {
-        england: 39,
-        germany: 78,
-        spain: 140,
-        italy: 135,
-        france: 61,
-    };
+  
 
     // Get the team name from the teamId
     const teamName = Object.keys(teamIds).find((name) => teamIds[name] === Number(teamId));
@@ -76,6 +82,8 @@ function getLeagueIdForComparison(teamId) {
         return leagueIds.italy;
     } else if (["barcelona", "atletico", "madrid"].includes(teamName)) {
         return leagueIds.spain;
+    } else if (["benfica", "porto"].includes(teamName)) {
+        return leagueIds.portugal;
     }
 
     console.error(`League ID not found for Team ID '${teamId}'.`);
@@ -176,23 +184,7 @@ function displayTeamStatistics(team1Stats, team2Stats) {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Map of team names to their respective team IDs
-    const teamIds = {
-        arsenal: 42,
-        chelsea: 49,
-        liverpool: 40,
-        manuntd: 33,
-        mancity: 50,
-        olympique: 81,
-        paris: 85,
-        bayern: 157,
-        borussia: 165,
-        juventus: 496,
-        milan: 489,
-        inter: 505,
-        barcelona: 529,
-        atletico: 530,
-        madrid: 541
-    };
+   
 
     // Add click event listeners to team icons
     const teamIcons = document.querySelectorAll(".team-icons img");
