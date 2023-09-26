@@ -1,3 +1,191 @@
-.team-icons{list-style:none;display:flex;justify-content:space-around;align-items:center}.team-icons li{height:40px;margin:10px}.team-icons img{max-height:100%;width:auto}h1{font-family:"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;text-align:center;font-size:50;color:#fff}header{height:25%;width:100%;background-color:#3a3939}.social-icons{position:absolute;right:10px;top:20px;display:flex;justify-content:flex-end;flex-direction:row}.social-icons a{margin-left:10px;text-decoration:none}.social-icons img{height:80px;width:auto}.tooltip{position:absolute;padding:4px;background-color:rgba(0,0,0,.8);color:#fff;border-radius:4px;pointer-events:none;display:none}body{display:flex;flex-wrap:wrap;justify-content:space-between}#map-container{width:60%}#message-form-container{width:40%}.welcome-message{position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);padding:20px;background-color:#fff;box-shadow:0px 0px 10px rgba(0,0,0,.2);border-radius:8px;text-align:center;max-width:400px;display:none}.welcome-message p{font-size:16px;margin-bottom:20px}.welcome-message button{padding:10px 20px;font-size:14px;background-color:#6d6f71;color:#fff;border:none;border-radius:4px;cursor:pointer}body{background-image:url("../assets/backgrounds/goal_bg.jpeg");background-size:cover;background-repeat:no-repeat}.team-icons img{cursor:pointer}#dates-form{display:flex;flex-wrap:wrap;justify-content:center;margin-top:20px}#dates-form label{margin:5px 10px;font-size:16px}#dates-form input[type=date]{padding:8px;margin:5px 0;border:1px solid #ccc;border-radius:4px}#dates-form input[type=submit]{margin-top:10px;padding:8px 20px;background-color:#007bff;color:#fff;border:none;border-radius:4px;cursor:pointer}#dates-form input[type=submit]:hover{background-color:#0056b3}#games-list{max-width:800px;margin:20px auto;padding:20px;background-color:#f9f9f9;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,.1)}#games-list h2{margin-bottom:10px;font-size:24px;text-align:center}#games-list li{margin-bottom:10px;padding:10px;border:1px solid #ccc;border-radius:4px;background-color:#fff}#games-list li p{margin:5px 0;font-size:16px}#games-list-wrapper{display:none}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+.team-icons {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-/*# sourceMappingURL=main.css.map*/
+.team-icons li {
+  height: 40px;
+  /* Set a fixed width for each icon container */
+  margin: 10px;
+}
+
+.team-icons img {
+  max-height: 100%;
+  /* Make sure the images don't exceed their container's width */
+  width: auto;
+  /* Preserve the aspect ratio of the images */
+}
+
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: 50;
+  color: #fff;
+}
+
+header {
+  height: 25%;
+  width: 100%;
+  background-color: rgb(58, 57, 57);
+}
+
+.social-icons {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.social-icons a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.social-icons img {
+  height: 80px;
+  /* Set the width to auto to maintain aspect ratio */
+  width: auto;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  pointer-events: none;
+  /* This ensures that the tooltip doesn't interfere with mouse events */
+  display: none;
+  /* Initially hide the tooltip */
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#map-container {
+  /* Set the width of the map container */
+  width: 60%;
+}
+
+#message-form-container {
+  /* Set the width of the container for the message, form, and list of games */
+  width: 40%;
+}
+
+.welcome-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  display: none;
+}
+
+.welcome-message p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.welcome-message button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #6d6f71;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body {
+  background-image: url("../assets/backgrounds/goal_bg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.team-icons img {
+  cursor: pointer;
+}
+
+#dates-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#dates-form label {
+  margin: 5px 10px;
+  font-size: 16px;
+}
+
+#dates-form input[type=date] {
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#dates-form input[type=submit] {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#dates-form input[type=submit]:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the games list */
+#games-list {
+  max-width: 800px;
+  /* Adjust the max-width as needed */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#games-list h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Style for individual game items */
+#games-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Style for game details like teams, date, etc. */
+#games-list li p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+#games-list-wrapper {
+  display: none;
+}

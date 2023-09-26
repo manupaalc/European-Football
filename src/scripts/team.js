@@ -43,18 +43,16 @@ function displayTeamInfo() {
             teamInfoElement.innerHTML = `
                 <img src="${teamImage}" alt="logo">
                 <h2>${teamName}</h2>
-                <p>Country: ${country}</p>
-                <p>Founded: ${foundedYear}</p>
-                <h3>Stadium: ${venue}</h3>
-                <p>Capacity: ${stadiumCapacity}</p>
-                <p>City: ${city}</p>
+                <p>Country: ${country}<br />
+                Founded: ${foundedYear}<br />
+                Stadium: ${venue}<br />
+                Capacity: ${stadiumCapacity}<br />
+                City: ${city}<br /></p>
             `;
-            const stadiumImageElement = document.createElement("img");
-            stadiumImageElement.src = stadiumImage;
-            stadiumImageElement.alt = "stadium";
-            stadiumImageElement.id = "stadium-info"; // Add an id to the stadium image
+            const stadiumImageElement = document.getElementById("stadium-image");
+            stadiumImageElement.innerHTML = `<img src="${stadiumImage}" alt="stadium">`;
 
-            teamInfoElement.appendChild(stadiumImageElement);
+            
         })
         .catch((err) => {
             console.log(err);

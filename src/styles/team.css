@@ -63,7 +63,8 @@ body {
 
 .content-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    
     justify-content: space-between;
     max-width: 1200px;
     /* Adjust the max-width as needed */
@@ -73,15 +74,19 @@ body {
 
 /* Style for the team info */
 #team-info {
-    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     /* This will make it take up the available space */
     max-width: 600px;
     /* Adjust the max-width as needed */
+   
 }
 
 /* Style for the stadium info */
-#stadium-info {
-    flex: 1;
+#stadium-image {
+    display: flex;
+    flex-direction: column;
     /* This will make it take up the available space */
     max-width: 600px;
     /* Adjust the max-width as needed */
@@ -92,4 +97,20 @@ body {
 }
 ul {
     color: #fff;
+}
+
+#team-info img {
+    max-height: 150px;
+    width: 150px;
+   
+    float: left;
+    margin-right: 20px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+#team-info p{
+    font-size: 40px;
 }

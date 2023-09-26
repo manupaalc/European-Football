@@ -2,7 +2,7 @@
 let countrySelected = false;
 let svg;
 let selectDifferentBtn;
-
+let selectedCountry = null;
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </p>
     <button id="close-message-btn">Go ahead!</button>
   `;
+   
     document.body.appendChild(welcomeMessageContainer);
 
     // Check if the welcome message has been shown before
@@ -44,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //declare the countries that will have interaction with the user
     const highlightedCountries = ['Spain', 'Italy', 'France', 'Germany', 'United Kingdom', 'Portugal'];
-    let selectedCountry = null;
     
 
     // Fetch the GeoJSON data using the Fetch API
@@ -225,42 +225,44 @@ document.addEventListener('DOMContentLoaded', () => {
         const startDate = document.getElementById('start-date').value;
         const endDate = document.getElementById('end-date').value;
         if (selectedCountry && startDate && endDate) {
-            // Display the trip info
-            datesForm.style.display = 'none'; // Hide the dates form
-            const tripMessage = `In ${selectedCountry} from ${startDate} to ${endDate}, there will be the next games:`;
-            document.getElementById('message').innerText = tripMessage;
-
             // Load JSON data for the selected country's teams
             const teamCalendars = await loadCountryTeamCalendars(selectedCountry);
-            if (teamCalendars.length > 0) {
-                // Filter games based on the user's selected dates
-                const selectedGames = teamCalendars.flatMap((teamCalendar) =>
-                    teamCalendar.filter(
-                        (game) => game.DateUtc >= startDate && game.DateUtc <= endDate
-                    )
-                );
 
-                // Display the selected games 
-                displayGames(selectedGames)
+            // Filter games based on the user's selected dates
+            const selectedGames = teamCalendars.flatMap((teamCalendar) =>
+                teamCalendar.filter(
+                    (game) => game.DateUtc >= startDate && game.DateUtc <= endDate
+                )
+            );
 
-                console.log(selectedGames);
+            if (selectedGames.length === 0) {
+                // No games found, show the dates form
+                document.getElementById('dates-form').style.display = 'block';
+                const noGamesMessage = `No games for ${selectedCountry} from ${startDate} to ${endDate}, please choose different dates or country.`;
+                document.getElementById('message').innerText = noGamesMessage;
+
+             
             } else {
-                console.error('No team calendars found for the selected country.');
+                // Display the selected games
+                displayGames(selectedGames, selectedCountry, startDate, endDate);
+                document.getElementById('dates-form').style.display = 'none';
+                const tripMessage = `In ${selectedCountry} from ${startDate} to ${endDate}, there will be the next games:`;
+                document.getElementById('message').innerText = tripMessage;
             }
+
         }
     });
    
    
 });
 
-function displayGames(games) {
+function displayGames(games, selectedCountry, startDate, endDate) {
     const gamesList = document.getElementById('games-list');
     const gamesListWrapper = document.getElementById('games-list-wrapper');
-    gamesList.innerHTML = ''; // Clear the existing list
 
-    if (games.length > 0){
+   
+        gamesList.innerHTML = ''; // Clear the existing list
 
-    
         games.forEach((game) => {
             const { DateUtc, HomeTeam, AwayTeam, Location } = game;
             const gameDate = new Date(DateUtc);
@@ -269,16 +271,14 @@ function displayGames(games) {
             const listItem = document.createElement('li');
             listItem.textContent = `${formattedDate} ${HomeTeam} vs ${AwayTeam}, stadium: ${Location}`;
             gamesList.appendChild(listItem);
+
         });
+
         // Show the games list container
         gamesListWrapper.style.display = 'block';
-    } else {
-        const noGamesMessage = `In ${selectedCountry} from ${startDate} to ${endDate}, there will not be any games, please choose different dates.`;
-        document.getElementById('message').innerText = noGamesMessage;
-        // Hide the games list container
-        gamesListWrapper.style.display = 'none';
-    }
+   
 }
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -324,4 +324,3 @@ const leagueIds = {
     france: 61,
     portugal: 94
 }
-console.log('updated')
